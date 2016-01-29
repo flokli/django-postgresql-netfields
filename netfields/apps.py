@@ -1,22 +1,18 @@
 import django
 from django.apps import AppConfig
 from django.db.models import Field
+from django.db.models.lookups import EndsWith, IEndsWith, StartsWith, IStartsWith,\
+    Regex, IRegex
 
 from netfields.fields import CidrAddressField, InetAddressField
 from netfields.lookups import (
-    EndsWith,
     Family,
-    IEndsWith,
-    IRegex,
-    IStartsWith,
     InvalidLookup,
     InvalidSearchLookup,
     NetContained,
     NetContainedOrEqual,
     NetContains,
     NetContainsOrEquals,
-    Regex,
-    StartsWith,
 )
 
 

@@ -33,30 +33,6 @@ class NetFieldDecoratorMixin(object):
         return lhs_string, lhs_params
 
 
-class EndsWith(NetFieldDecoratorMixin, BuiltinLookup):
-    lookup_name = 'endswith'
-
-
-class IEndsWith(NetFieldDecoratorMixin, BuiltinLookup):
-    lookup_name = 'iendswith'
-
-
-class StartsWith(NetFieldDecoratorMixin, BuiltinLookup):
-    lookup_name = 'startswith'
-
-
-class IStartsWith(NetFieldDecoratorMixin, BuiltinLookup):
-    lookup_name = 'istartswith'
-
-
-class Regex(NetFieldDecoratorMixin, BuiltinLookup):
-    lookup_name = 'regex'
-
-
-class IRegex(NetFieldDecoratorMixin, BuiltinLookup):
-    lookup_name = 'iregex'
-
-
 class NetContains(Lookup):
     lookup_name = 'net_contains'
 
@@ -85,6 +61,7 @@ class NetContainsOrEquals(Lookup):
         rhs, rhs_params = self.process_rhs(qn, connection)
         params = lhs_params + rhs_params
         return '%s >>= %s' % (lhs, rhs), params
+
 
 class NetContainedOrEqual(Lookup):
     lookup_name = 'net_contained_or_equal'
